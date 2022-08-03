@@ -1,0 +1,9 @@
+.subscribe-container {
+  background: url('https://i.ibb.co/09v9kH0/newsletter.jpg');
+  width: 70vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+  height: 65vh;
+}

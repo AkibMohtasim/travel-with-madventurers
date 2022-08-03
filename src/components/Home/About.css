@@ -1,0 +1,19 @@
+.container-about {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  width: 70vw;
+  padding: 7% 0;
+}
+
+.about-section {
+  width: 65%;
+}
+
+.heading-section {
+  width: 35%;
+}
+
+.heading-section>h1 {
+  font-size: 4rem;
+}
