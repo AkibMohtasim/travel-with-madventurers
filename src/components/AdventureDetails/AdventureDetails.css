@@ -1,0 +1,30 @@
+.adventure-details{
+  width: 80vw;
+  margin: 0px auto;
+  background-color: rgba(128, 128, 128, 0.05);
+}
+.adventure-details>h2{
+  margin-top: 0;
+  padding-top: 30px;
+}
+
+.adventure-details>img{
+  width: 70%;
+}
+
+.adventure-details>p{
+  text-align: justify;
+  margin: 30px 20px;
+}
+
+.adventure-details> ul {
+  margin: 20px auto;
+  list-style:inside;
+  text-align: justify;
+}
+
+.link-btn {
+  text-decoration: none;
+  border: 1px solid brown;
+  padding: 10px 20px;
+}

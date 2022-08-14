@@ -9,10 +9,10 @@ const Advenntures = () => {
       .then(res => res.json())
       .then(data => setAdventures(data))
   }, [])
-  console.log(adventures)
+  // console.log(adventures)
   return (
     <Container>
-      <h2>Adventure section</h2>
+      <h2 style={{color: 'orangered', borderBottom: '1px dashed orangered', padding: '10px 0px', maxWidth: '250px', margin: '15px auto'}}>ADVENTURES</h2>
       <Grid container direction="row"
         justifyContent="center"
         alignItems="center" spacing={3}>

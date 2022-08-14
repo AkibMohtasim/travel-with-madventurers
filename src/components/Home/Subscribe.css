@@ -1,9 +1,56 @@
 .subscribe-container {
-  background: url('https://i.ibb.co/09v9kH0/newsletter.jpg');
+  background-image: linear-gradient(#2e3a4133, #746d6d4f), url('https://i.ibb.co/MVT0Ww6/newsletter.jpg') ;
   width: 70vw;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   margin: auto;
+  margin-bottom: 60px;
   height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: antiquewhite;
+  column-gap: 0px;
+}
+
+.subscribe-container>h2{
+  margin: 30px 0 20px 0;
+  font-size: 2.5rem;
+}
+
+.subscribe-container>p{
+  margin: 3px auto;
+  font-size: 1.1rem;
+  background-color: rgba(0, 0, 0, 0.212);
+  width: 80%;
+
+}
+
+.input {
+  margin: 30px 0 10px 0;
+  border: none;
+  width: 280px;
+  height: 40px;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 0px 10px;
+}
+.input::placeholder{
+  text-align: center;
+}
+
+.btn{
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  cursor: pointer;
+  color: wheat;
+  border: none;
+  width: 120px;
+  height: 40px;
+}
+
+.btn:hover{
+  background-color: black;
+  transition: 0.4s;
 }

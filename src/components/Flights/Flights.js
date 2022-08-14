@@ -16,8 +16,8 @@ const Flights = () => {
   if (flights.length < 1) {
     flightContent = <div>
       <Skeleton width={410} height={118} />
-      <Skeleton animation="wave" width={210} height={118} />
-      <Skeleton animation={false} width={210} height={118} />
+      <Skeleton animation="wave" width={410} height={118} />
+      <Skeleton animation={false} width={410} height={118} />
     </div>
   }
   else {

@@ -3,19 +3,20 @@ import { Link } from "react-router-dom";
 import React from 'react';
 
 const Adventure = (props) => {
-  const {name, img, _id} = props.adventure;
+  const {name, locations, img1, _id} = props.adventure;
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="140"
-        image={img}
+        image={img1}
         alt="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {name}
         </Typography>
+        {locations}
       </CardContent>
       <CardActions>
         <Button size="small"><Link to={`/adventures/${_id}`}> See Details </Link></Button>

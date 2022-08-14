@@ -12,11 +12,11 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInUsingGoogle()
       .then(result => {
-        console.log(result.user);
+        // console.log(result.user);
         navigate(redirect_uri);
       })
   }
-  console.log(user)
+  // console.log(user)
   return (
     <div>
       <h2>Please Login</h2>

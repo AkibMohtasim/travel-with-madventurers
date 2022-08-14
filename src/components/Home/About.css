@@ -1,19 +1,37 @@
 .container-about {
-  margin: auto;
   display: flex;
-  flex-direction: row;
+  margin: auto;
+  flex-direction: row-reverse;
+  /* flex-wrap: wrap; */
   width: 70vw;
   padding: 7% 0;
 }
-
 .about-section {
-  width: 65%;
+  width: 60%;
+  margin-right: 4%;
+  text-align: justify; 
 }
 
 .heading-section {
-  width: 35%;
+  width: 30%;
+  text-align: end;
 }
 
 .heading-section>h1 {
   font-size: 4rem;
+}
+
+@media (max-width: 800px) {
+  .container-about {
+    flex-direction: column;
+  }
+  .about-section{
+    width: 70vw;
+  }
+  .heading-section{
+    width: 70vw;
+  }
+  .heading-section>h1 {
+    font-size: 2rem;
+  }
 }

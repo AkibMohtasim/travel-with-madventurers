@@ -1,4 +1,5 @@
 import React from 'react';
+import './Home.css';
 import Carousel from 'react-material-ui-carousel';
 import banner1 from '../../images/banner/pexels-sam-kolder-2387873.jpg';
 import banner2 from '../../images/banner/pexels-alfonso-escalante-2533092.jpg';
@@ -8,6 +9,7 @@ import Footer from '../Footer/Footer';
 import About from './About';
 import SubScribe from './SubScribe';
 import ImgGallery from './ImgGallery';
+import { Link } from 'react-router-dom';
 // import Adventures from '../Adventures/Adventures';
 
 
@@ -17,12 +19,18 @@ const Home = () => {
       <Carousel indicators>
         <div>
           <img src={banner1} alt="" />
-          <h1 style={{ position: 'absolute', top: '40%', left: '30%', color: 'white' }}>Welcome to Madventurers</h1>
+          <h1 className='banner-1'>Welcome to <span style={{ color: '#e75723e3' }}>MADventurers</span></h1>
         </div>
-        <img src={banner2} alt="" />
+        <div>
+          <img src={banner2} alt="" />
+          <div className='banner-2'>
+            <h2>Travel with us all around the world</h2>
+            <Link className='button' to={'/adventures'}>Adventures</Link>
+          </div>
+        </div>
         <img src={banner3} alt="" />
       </Carousel>
-      {/* <h1 style={{position: 'absolute', top: '500px', left: '500px', color: 'white'}}>Welcome to Madventurers</h1> */}
+
       <br />
       <Advenntures></Advenntures>
       <About></About>

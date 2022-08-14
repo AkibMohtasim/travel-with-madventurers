@@ -1,0 +1,38 @@
+.banner-1 {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  color: #3d1616;
+  font-size: 2.2rem;
+}
+
+.banner-2 {
+  position: absolute;
+  top: 17%;
+  left: 20%;
+  color: #3d1616;
+  font-size: 2.2rem;
+}
+
+.banner-2>h2 {
+  margin: 0;
+  color: #e75723e3;
+}
+
+.button {
+  text-decoration: none;
+  background-color: transparent;
+  color: #dc7003;
+  font-weight: 600;
+  font-size: 17px;
+  border: 1px solid #dc7003d2;
+  border-radius: 5px;
+  padding: 12px 30px;
+  /* width: 120px; */
+  cursor: pointer;
+}
+.button:hover{
+  background-color: #dc700379;
+  color: white;
+  transition: 0.4s;
+}

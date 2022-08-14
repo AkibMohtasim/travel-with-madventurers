@@ -1,9 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import useAuth from '../../hooks/useAuth';
+import Cart from '../Cart/Cart';
+import PackageSummary from '../PackageSummary/PackageSummary';
+import './PlaceOrder.css';
 
 const PlaceOrder = () => {
+  const { user } = useAuth();
+  const [adventures, setAdventures] = useState([]);
+  const [cart, setCart] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/adventures`)
+      .then(res => res.json())
+      .then(data => setAdventures(data))
+  }, [])
+
+  const handleAddToCart = (product) => {
+    const newCart = [...cart, product];
+    setCart(newCart);
+  }
+
   return (
-    <div>
-      <h1>place your order</h1>
+    <div className='order-container'>
+      <div>
+        {
+          adventures.map(adv =>
+            <PackageSummary
+              key={adv._id}
+              adventures={adv}
+              handleAddToCart = {handleAddToCart}
+            ></PackageSummary>
+          )
+        }
+      </div>
+      <div className='cart'>
+        <Cart cart={cart}></Cart>
+      </div>
+
     </div>
   );
 };
