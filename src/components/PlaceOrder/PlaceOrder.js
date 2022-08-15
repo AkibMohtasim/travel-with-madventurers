@@ -33,7 +33,7 @@ const PlaceOrder = () => {
         }
       </div>
       <div className='cart'>
-        <Cart cart={cart}></Cart>
+        <Cart cart={cart} user={user}></Cart>
       </div>
 
     </div>
