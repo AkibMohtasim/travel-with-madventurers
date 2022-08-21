@@ -23,7 +23,7 @@ const Login = () => {
 
       <button onClick={handleGoogleSignIn}> Google Sign In</button>
       <br />
-      <button onClick={logOut}>Log Out</button>
+      {/* <button onClick={logOut}>Log Out</button> */}
 
       <p>{user?.displayName}</p>
 

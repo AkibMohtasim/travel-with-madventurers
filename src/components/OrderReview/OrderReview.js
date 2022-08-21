@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
-import useCart from '../../hooks/useCart';
-import { addToDb, getStoredCart } from '../../utilities/fakedb';
-import Cart from '../Cart/Cart';
-import PackageSummary from '../PackageSummary/PackageSummary';
-import './PlaceOrder.css';
 
-const PlaceOrder = () => {
-  const { user } = useAuth();
+import useAdventures from '../../hooks/useAdventures';
+
+import useCart from '../../hooks/useCart';
+import { useNavigate } from 'react-router';
+import { getStoredCart, removeFromDb } from '../../utilities/fakedb';
+import Cart from '../Cart/Cart';
+import ReviewItem from '../ReviewItem/ReviewItem';
+
+const OrderReview = () => {
+  // const [adventures] = useAdventures();
   const [adventures, setAdventures] = useState([]);
-  // const [cart, setCart] = useState([]);
   const [cart, setCart] = useCart();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:5000/adventures`)
@@ -36,34 +37,38 @@ const PlaceOrder = () => {
     }
   }, [adventures])
 
-  const handleAddToCart = (product) => {
-    const newCart = [...cart, product];
+
+  const handleRemove = key => {
+    const newCart = cart.filter(product => product._id !== key);
     setCart(newCart);
-    // console.log(product._id)
-    addToDb(product._id)
+    removeFromDb(key);
+  }
+
+  const handleProceedToShipping = () => {
+    // setCart([]);
+    // clearTheCart();
+    navigate('/enterDetails', { replace: true });
+    // history.push('/shipping');
   }
 
   return (
-    <div className='order-container'>
+    <div>
       <div>
         {
-          adventures.map(adv =>
-            <PackageSummary
-              key={adv._id}
-              adventures={adv}
-              handleAddToCart={handleAddToCart}
-            ></PackageSummary>
-          )
+          cart.map(product => <ReviewItem
+            key={product._id}
+            product={product}
+            handleRemove={handleRemove}
+          ></ReviewItem>)
         }
       </div>
-      <div className='cart'>
-        <Cart cart={cart} user={user}>
-          <Link to='/review'>Proceed</Link>
+      <div className="cart-container">
+        <Cart cart={cart}>
+          <button onClick={handleProceedToShipping}>Enter Details</button>
         </Cart>
       </div>
-
     </div>
   );
 };
 
-export default PlaceOrder;
+export default OrderReview;
