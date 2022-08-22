@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
-  const { logOut, signInUsingGoogle, user } = useAuth();
+  const { logOut, signInUsingGoogle, user, isLoading, setIsLoading} = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const redirect_uri = location.state?.from || '/home';
@@ -15,6 +15,7 @@ const Login = () => {
         // console.log(result.user);
         navigate(redirect_uri);
       })
+      .finally( () => setIsLoading(false))
   }
   // console.log(user)
   return (
